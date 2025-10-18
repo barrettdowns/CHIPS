@@ -1,0 +1,72 @@
+{
+  "total_tested": 2,
+  "successful_tests": 2,
+  "failed_tests": 0,
+  "improvements": 4,
+  "new_capabilities": 4,
+  "test_results": [
+    {
+      "entity_id": 1,
+      "entity_name": "Intel Corporation",
+      "test_timestamp": "2025-10-15T20:32:54.325357",
+      "existing_capabilities": [
+        {
+          "type": "ADVANCED_LOGIC",
+          "confidence": 0.9,
+          "evidence": "Intel is developing advanced logic technologies including EUV lithography and GAA transistors"
+        }
+      ],
+      "ai_capabilities": [
+        {
+          "type": "ADVANCED_LOGIC",
+          "confidence": 0.9,
+          "evidence": "The project description mentions an advanced semiconductor manufacturing facility, which implies the use of cutting-edge process technologies. [AI Enhanced: Intel is a leader in advanced logic technol..."
+        },
+        {
+          "type": "MATERIALS_EQUIPMENT",
+          "confidence": 0.8,
+          "evidence": "The establishment of a manufacturing facility suggests significant investment in semiconductor materials and fabrication equipment. [AI Enhanced: Intel's investment in materials and equipment is essen..."
+        }
+      ],
+      "comparison": {
+        "existing_count": 1,
+        "ai_count": 2,
+        "improvements": 1,
+        "new_capabilities": 1,
+        "improved_confidence": 0,
+        "details": []
+      }
+    },
+    {
+      "entity_id": 2,
+      "entity_name": "Industrial Advisory Co",
+      "test_timestamp": "2025-10-15T20:33:00.151253",
+      "existing_capabilities": [],
+      "ai_capabilities": [
+        {
+          "type": "ADVANCED_LOGIC",
+          "confidence": 0.85,
+          "evidence": "Project description mentions advanced logic design and process scaling. [AI Enhanced: The entity has a strong focus on cutting-edge logic technologies, indicating a robust capability in advanced semic..."
+        },
+        {
+          "type": "RFIC_DESIGN",
+          "confidence": 0.75,
+          "evidence": "Implied capabilities in wireless communications and 5G technologies. [AI Enhanced: The funding suggests a strategic investment in RF technologies, aligning with current industry trends in wireless com..."
+        },
+        {
+          "type": "ADVANCED_PACKAGING",
+          "confidence": 0.7,
+          "evidence": "Mentions of advanced interconnects and system-in-package solutions. [AI Enhanced: The focus on advanced packaging indicates a commitment to improving performance and integration in semiconductor devic..."
+        }
+      ],
+      "comparison": {
+        "existing_count": 0,
+        "ai_count": 3,
+        "improvements": 3,
+        "new_capabilities": 3,
+        "improved_confidence": 0,
+        "details": []
+      }
+    }
+  ]
+}

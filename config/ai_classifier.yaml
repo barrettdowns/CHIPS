@@ -1,0 +1,14 @@
+ai_settings:
+  max_tokens: 2000
+  min_confidence_threshold: 0.3
+  model: gpt-4o-mini
+  temperature: 0.1
+classifier_type: ai
+cost_control:
+  daily_budget: 5.0
+  enable_cost_tracking: true
+  fallback_to_rule_based: true
+testing:
+  enable_test_mode: false
+  save_test_results: true
+  test_results_dir: ai_test_results

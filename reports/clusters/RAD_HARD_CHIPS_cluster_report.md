@@ -1,0 +1,346 @@
+# Capability Cluster Report: Radiation Hardened (RAD-HARD) Chips
+
+**Generated:** 2025-10-17 10:10:16  
+**Capability Area:** Radiation Hardened (RAD-HARD) Chips  
+**Description:** Radiation-hardened electronics, space-grade, aerospace, nuclear applications  
+**Total Entities:** 15
+
+---
+
+## Overview
+
+This report provides an analysis of all entities with Radiation Hardened (RAD-HARD) Chips capabilities in the CHIPS Act ecosystem. The analysis includes funding patterns, relationship networks, and capability confidence scores.
+
+### Key Statistics
+
+- **Total Entities:** 15
+- **Total Funding:** $1166649520.22M
+- **Average Confidence:** 0.7
+- **High Confidence Entities:** 2 (13.3%)
+
+---
+
+## Entity Analysis
+
+
+| Entity | Type | Funding | Confidence | Capabilities |
+|--------|------|---------|------------|--------------|
+
+| [SPACE MICRO INC](SPACE_MICRO_INC.md) | Company | $74960.00M | 0.8 | 2 |
+
+| [RAYTHEON COMPANY](RAYTHEON_COMPANY.md) | Company | $312121282.63M | 0.85 | 3 |
+
+| [NORTHROP GRUMMAN SYSTEMS CORPORATION](NORTHROP_GRUMMAN_SYSTEMS_CORPORATION.md) | Company | $76389583.70M | 0.75 | 2 |
+
+| [BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.](BAE_SYSTEMS_INFORMATION_AND_ELECTRONIC_SYSTEMS_INTEGRATION_INC..md) | Company | $423498396.54M | 0.75 | 2 |
+
+| [CAES SYSTEMS LLC](CAES_SYSTEMS_LLC.md) | Company | $1482531.00M | 0.75 | 2 |
+
+| [L3HARRIS INTERSTATE ELECTRONICS CORPORATION](L3HARRIS_INTERSTATE_ELECTRONICS_CORPORATION.md) | Company | $268617705.03M | 0.75 | 2 |
+
+| [LOCKHEED MARTIN CORPORATION](LOCKHEED_MARTIN_CORPORATION.md) | Company | $51126491.04M | 0.65 | 2 |
+
+| [THE BOEING COMPANY](THE_BOEING_COMPANY.md) | Company | $9688414.50M | 0.7 | 1 |
+
+| [DRS NETWORK &amp; IMAGING SYSTEMS LLC](DRS_NETWORK_&amp;_IMAGING_SYSTEMS_LLC.md) | Consortium | $894520.72M | 0.65 | 2 |
+
+| [DRS NETWORK &amp; IMAGING SYSTEMS, LLC](DRS_NETWORK_&amp;_IMAGING_SYSTEMS,_LLC.md) | Consortium | $794012.47M | 0.65 | 2 |
+
+| [GENERAL DYNAMICS MISSION SYSTEMS, INC.](GENERAL_DYNAMICS_MISSION_SYSTEMS,_INC..md) | Company | $9244164.00M | 0.65 | 2 |
+
+| [HONEYWELL INTERNATIONAL, INC.](HONEYWELL_INTERNATIONAL,_INC..md) | Company | $3161252.00M | 0.65 | 2 |
+
+| [ROCKWELL COLLINS, INC.](ROCKWELL_COLLINS,_INC..md) | Company | $1281374.00M | 0.65 | 2 |
+
+| [SCIENTIFIC APPLICATIONS &amp; RESEARCH ASSOCIATES, INC.](SCIENTIFIC_APPLICATIONS_&amp;_RESEARCH_ASSOCIATES,_INC..md) | University | $197282.59M | 0.65 | 2 |
+
+| [BAE SYSTEMS INFORMATION &amp; ELECTRONIC SYSTEMS INTEGRATION INC](BAE_SYSTEMS_INFORMATION_&amp;_ELECTRONIC_SYSTEMS_INTEGRATION_INC.md) | Company | $8077550.00M | 0.6 | 3 |
+
+
+
+---
+
+## Funding Analysis
+
+
+### Funding Distribution
+
+
+- **SPACE MICRO INC:** $74960.00M
+  
+  - N/A: $74960.00M - X224-OCSO1 SBIR PHASE I PROPOSAL FX224-OCSO1-1289 ...
+  
+
+
+- **RAYTHEON COMPANY:** $312121282.63M
+  
+  - N/A: $20514387.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $2514042.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $1817881.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $2367869.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $9855043.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $755776.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $252822.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $2868000.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $183812.00M - DESIGN AND BUILD A MONOLITHIC MICROWAVE INTEGRATED...
+  
+  - N/A: $1998845.20M - IGF::OT::IGF ENGINEERING SERVICES.  THE PURPOSE OF...
+  
+  - N/A: $201509372.43M - GLOBAL POSITIONING SYSTEM MILITARY USERS EQUIPMENT...
+  
+  - N/A: $67483433.00M - NEXT GENERATION APPLICATION SPECIFIC INTEGRATED CI...
+  
+
+
+- **NORTHROP GRUMMAN SYSTEMS CORPORATION:** $76389583.70M
+  
+  - N/A: $532518.14M - PHOTONICS IN THE PACKAGE FOR EXTREME SCALABILITIES...
+  
+  - N/A: $1000000.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $2252575.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $2188805.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $1516946.00M - CET 25-531, THE ADVANCED TECHNOLOGY SUPPORT PROGRA...
+  
+  - N/A: $4582097.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $45134321.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $7261607.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $2479804.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $4040910.56M - IGF::OT::IGF  THE OBJECTIVE OF THE CIRCUIT REALIZA...
+  
+  - N/A: $5400000.00M - NEW START: MULTI-CHIP MANUFACTURING
+  
+
+
+- **BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.:** $423498396.54M
+  
+  - N/A: $307591.00M - PHOTONICS IN THE PACKAGE FOR EXTREME SCALABILITY (...
+  
+  - N/A: $18309147.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $5052172.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $5293470.00M - THE OBJECTIVE OF THE INTEGRITY AND RELIABILITY OF ...
+  
+  - N/A: $332001835.18M - GLOBAL POSITIONING SYSTEM MILITARY USERS EQUIPMENT...
+  
+  - N/A: $62534181.36M - NEXT GENERATION APPLICATION SPECIFIC INTEGRATED CI...
+  
+
+
+- **CAES SYSTEMS LLC:** $1482531.00M
+  
+  - N/A: $1482531.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+
+
+- **L3HARRIS INTERSTATE ELECTRONICS CORPORATION:** $268617705.03M
+  
+  - N/A: $1749741.00M - THIS CONTRACT IS FOR THE PURCHASE OF 11,909 RHAPSO...
+  
+  - N/A: $208323893.59M - GLOBAL POSITIONING SYSTEM MILITARY USERS EQUIPMENT...
+  
+  - N/A: $58544070.44M - NEXT GENERATION APPLICATION SPECIFIC INTEGRATED CI...
+  
+
+
+- **LOCKHEED MARTIN CORPORATION:** $51126491.04M
+  
+  - N/A: $2658820.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $16867661.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $5578392.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $14484565.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+  - N/A: $10276799.00M - SYSTEM SECURITY INTEGRATED THROUGH HARDWARE AND FI...
+  
+  - N/A: $401264.00M - DEPOT-LEVEL MAINTENANCE AND CONDEMNATION OF THE F-...
+  
+  - N/A: $269990.04M - REPAIR COVERAGE FOR THE ALQ-161 AND THE F-15C/D VE...
+  
+  - N/A: $190000.00M - REPAIR COVERAGE FOR THE ALQ-161 AND THE F-15C/D VE...
+  
+  - N/A: $399000.00M - REPAIR COVERAGE FOR THE ALQ-161 AND THE F-15C/D VE...
+  
+
+
+- **THE BOEING COMPANY:** $9688414.50M
+  
+  - N/A: $5337175.27M - IGF::OT::IGF  THE OBJECTIVE OF THE CIRCUIT REALIZA...
+  
+  - N/A: $4351239.23M - IGF::OT::IGF  INTEGRITY AND RELIABILITY OF INTEGRA...
+  
+
+
+- **DRS NETWORK &amp; IMAGING SYSTEMS LLC:** $894520.72M
+  
+  - N/A: $894520.72M - IGF::OT::IGF OTHER FUNCTIONS THIS CONTRACT IS FOR ...
+  
+
+
+- **DRS NETWORK &amp; IMAGING SYSTEMS, LLC:** $794012.47M
+  
+  - N/A: $794012.47M - IGF::CT::IGF CRITICAL FUNCTIONS NASA GODDARD SPACE...
+  
+
+
+- **GENERAL DYNAMICS MISSION SYSTEMS, INC.:** $9244164.00M
+  
+  - N/A: $9244164.00M - THE ADVANCED TECHNOLOGY SUPPORT PROGRAM (ATSP) CON...
+  
+
+
+- **HONEYWELL INTERNATIONAL, INC.:** $3161252.00M
+  
+  - N/A: $3161252.00M - RADIATION HARDENED MICROELECTRONICS INTEGRATED CIR...
+  
+
+
+- **ROCKWELL COLLINS, INC.:** $1281374.00M
+  
+  - N/A: $1281374.00M - THE CVRI1 PRODUCTION APPLICATION SPECIFIC INTEGRAT...
+  
+
+
+- **SCIENTIFIC APPLICATIONS &amp; RESEARCH ASSOCIATES, INC.:** $197282.59M
+  
+  - N/A: $197282.59M - SBIR PHASE I RESEARCH AND DEVELOPMENT EFFORTS TO D...
+  
+
+
+- **BAE SYSTEMS INFORMATION &amp; ELECTRONIC SYSTEMS INTEGRATION INC:** $8077550.00M
+  
+  - N/A: $8077550.00M - TECHNOLOGIES FOR MIXED-MODE ULTRA SCALED INTEGRATE...
+  
+
+
+
+
+### Funding Trends
+
+
+
+---
+
+## Capability Analysis
+
+
+### Capability Confidence Distribution
+
+- **High Confidence (0.8+):** 3 entities
+- **Medium Confidence (0.6-0.8):** 11 entities  
+- **Low Confidence (0.3-0.6):** 1 entities
+- **Below Threshold (<0.3):** 0 entities
+
+### Evidence Quality
+
+
+
+
+---
+
+## Relationship Network
+
+
+
+### Network Statistics
+
+- **Total Relationships:** 0
+- **Average Connections per Entity:** 0.0
+- **Most Connected Entity:** N/A (0 connections)
+
+---
+
+## Key Insights
+
+### Top Funded Entities
+
+
+
+1. **BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.** - $423498396.54M
+
+2. **RAYTHEON COMPANY** - $312121282.63M
+
+3. **L3HARRIS INTERSTATE ELECTRONICS CORPORATION** - $268617705.03M
+
+4. **NORTHROP GRUMMAN SYSTEMS CORPORATION** - $76389583.70M
+
+5. **LOCKHEED MARTIN CORPORATION** - $51126491.04M
+
+
+
+### Highest Confidence Capabilities
+
+
+
+1. **RAYTHEON COMPANY** - 0.85 confidence
+
+2. **SPACE MICRO INC** - 0.8 confidence
+
+3. **NORTHROP GRUMMAN SYSTEMS CORPORATION** - 0.75 confidence
+
+4. **BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.** - 0.75 confidence
+
+5. **CAES SYSTEMS LLC** - 0.75 confidence
+
+
+
+### Emerging Trends
+
+
+
+- **Growing Investment:** Increased funding in this capability area over the past year
+
+- **Technology Maturation:** Capability moving from research to production phase
+
+
+
+---
+
+## Data Sources
+
+
+
+---
+
+## Recommendations
+
+### For Further Analysis
+
+1. **High Priority:** Investigate entities with high funding but low confidence scores
+2. **Medium Priority:** Expand data collection for entities with insufficient evidence
+3. **Low Priority:** Review flagged entities in the review queue
+
+### For Collection Strategy
+
+1. **Focus Areas:** Space-Grade Electronics, Radiation Tolerance, Aerospace Applications
+2. **Data Gaps:** Limited patent data, Insufficient funding details, Missing relationship information
+3. **Update Frequency:** Monthly
+
+---
+
+## Metadata
+
+- **Report Generated:** 2025-10-17 10:10:16
+- **Capability ID:** 6
+- **Total Entities Analyzed:** 15
+- **Total Funding Analyzed:** $1166649520.22M
+- **Data Sources Used:** 0
+- **Relationships Mapped:** 0
+- **Review Items:** 0

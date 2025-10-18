@@ -1,0 +1,31 @@
+{
+  "entity_id": 2,
+  "entity_name": "Industrial Advisory Co",
+  "test_timestamp": "2025-10-15T20:33:00.151253",
+  "existing_capabilities": [],
+  "ai_capabilities": [
+    {
+      "type": "ADVANCED_LOGIC",
+      "confidence": 0.85,
+      "evidence": "Project description mentions advanced logic design and process scaling. [AI Enhanced: The entity has a strong focus on cutting-edge logic technologies, indicating a robust capability in advanced semic..."
+    },
+    {
+      "type": "RFIC_DESIGN",
+      "confidence": 0.75,
+      "evidence": "Implied capabilities in wireless communications and 5G technologies. [AI Enhanced: The funding suggests a strategic investment in RF technologies, aligning with current industry trends in wireless com..."
+    },
+    {
+      "type": "ADVANCED_PACKAGING",
+      "confidence": 0.7,
+      "evidence": "Mentions of advanced interconnects and system-in-package solutions. [AI Enhanced: The focus on advanced packaging indicates a commitment to improving performance and integration in semiconductor devic..."
+    }
+  ],
+  "comparison": {
+    "existing_count": 0,
+    "ai_count": 3,
+    "improvements": 3,
+    "new_capabilities": 3,
+    "improved_confidence": 0,
+    "details": []
+  }
+}

@@ -1,0 +1,203 @@
+# Data Sources Configuration
+# Defines scraping targets, selectors, and collection parameters
+
+sources:
+  # USASpending.gov API Configuration
+  usaspending:
+    base_url: "https://api.usaspending.gov/api/v2"
+    endpoints:
+      spending_by_award: "/search/spending_by_award/"
+      spending_by_recipient: "/search/spending_by_recipient/"
+    rate_limit:
+      requests_per_minute: 30
+      delay_between_requests: 2
+    headers:
+      User-Agent: "CHIPS Intelligence Collection Bot 1.0"
+      Accept: "application/json"
+    enabled: true
+
+  # OPSEC Configuration
+  opsec:
+    vpn_check_enabled: false  # Disable VPN requirement for testing
+    user_agent_rotation: true
+    rate_limiting: true
+
+sources:
+  chips_gov:
+    name: "CHIPS.gov Funding Announcements"
+    base_url: "https://www.chips.gov"
+    endpoints:
+      announcements: "/news-and-updates"
+      awards: "/funding-opportunities"
+    selectors:
+      announcement_title: "h2.news-title"
+      announcement_date: ".news-date"
+      announcement_content: ".news-content"
+      funding_amount: ".funding-amount"
+      recipient_name: ".recipient-name"
+    rate_limit:
+      requests_per_minute: 10
+      delay_between_requests: 6
+    headers:
+      User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    enabled: true
+
+  sec_edgar:
+    name: "SEC EDGAR Filings"
+    base_url: "https://www.sec.gov/edgar"
+    endpoints:
+      search: "/search"
+      filings: "/data"
+    selectors:
+      filing_title: ".filing-title"
+      filing_date: ".filing-date"
+      company_name: ".company-name"
+      document_content: ".document-content"
+    rate_limit:
+      requests_per_minute: 2
+      delay_between_requests: 30
+    headers:
+      User-Agent: "Industry Research Bot 1.0 (research@example.com)"
+      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    enabled: true
+
+  semiconductor_digest:
+    name: "Semiconductor Digest"
+    base_url: "https://www.semiconductor-digest.com"
+    endpoints:
+      news: "/news"
+      articles: "/articles"
+    selectors:
+      article_title: "h1.article-title"
+      article_date: ".article-date"
+      article_content: ".article-content"
+      company_mentions: ".company-mention"
+    rate_limit:
+      requests_per_minute: 15
+      delay_between_requests: 4
+    headers:
+      User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    enabled: true
+
+  ee_times:
+    name: "EE Times"
+    base_url: "https://www.eetimes.com"
+    endpoints:
+      news: "/news"
+      articles: "/articles"
+    selectors:
+      article_title: "h1.headline"
+      article_date: ".publish-date"
+      article_content: ".article-body"
+      company_mentions: ".company-name"
+    rate_limit:
+      requests_per_minute: 12
+      delay_between_requests: 5
+    headers:
+      User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    enabled: true
+
+  anandtech:
+    name: "AnandTech"
+    base_url: "https://www.anandtech.com"
+    endpoints:
+      news: "/news"
+      articles: "/articles"
+    selectors:
+      article_title: "h1.title"
+      article_date: ".date"
+      article_content: ".content"
+      company_mentions: ".company"
+    rate_limit:
+      requests_per_minute: 8
+      delay_between_requests: 7
+    headers:
+      User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    enabled: true
+
+  university_press:
+    name: "University Press Releases"
+    universities:
+      - name: "Purdue University"
+        base_url: "https://www.purdue.edu"
+        press_endpoint: "/newsroom"
+        selectors:
+          title: "h2.news-title"
+          date: ".news-date"
+          content: ".news-content"
+      - name: "MIT"
+        base_url: "https://news.mit.edu"
+        press_endpoint: "/topic/semiconductors"
+        selectors:
+          title: "h1.article-title"
+          date: ".article-date"
+          content: ".article-content"
+      - name: "Stanford University"
+        base_url: "https://news.stanford.edu"
+        press_endpoint: "/topic/engineering"
+        selectors:
+          title: "h1.headline"
+          date: ".publish-date"
+          content: ".article-body"
+    rate_limit:
+      requests_per_minute: 6
+      delay_between_requests: 10
+    headers:
+      User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    enabled: true
+
+  patent_database:
+    name: "USPTO Patent Database"
+    base_url: "https://www.uspto.gov"
+    endpoints:
+      search: "/patents/search"
+      patent: "/patents/view"
+    selectors:
+      patent_title: ".patent-title"
+      patent_date: ".patent-date"
+      inventor: ".inventor"
+      assignee: ".assignee"
+      abstract: ".abstract"
+    rate_limit:
+      requests_per_minute: 3
+      delay_between_requests: 20
+    headers:
+      User-Agent: "Patent Research Bot 1.0 (research@example.com)"
+      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    enabled: false  # Disabled by default due to complexity
+
+# Collection parameters
+collection:
+  max_pages_per_source: 50
+  max_articles_per_page: 20
+  timeout_seconds: 30
+  retry_attempts: 3
+  retry_delay: 5
+  
+# OPSEC settings
+opsec:
+  vpn_check_enabled: false
+  vpn_command: "nordlayer status"
+  user_agent_rotation: true
+  request_delay_range: [2, 10]  # Random delay between requests
+  session_isolation: true
+  respect_robots_txt: true
+  
+# Data processing
+processing:
+  min_confidence_threshold: 0.3
+  max_entities_per_batch: 100
+  enable_fuzzy_matching: true
+  fuzzy_match_threshold: 0.8
+  
+# Output settings
+output:
+  save_raw_data: true
+  save_processed_data: true
+  generate_summaries: true
+  export_formats: ["json", "csv", "markdown"]

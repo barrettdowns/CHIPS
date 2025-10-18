@@ -1,0 +1,32 @@
+{
+  "entity_id": 1,
+  "entity_name": "Intel Corporation",
+  "test_timestamp": "2025-10-15T20:32:54.325357",
+  "existing_capabilities": [
+    {
+      "type": "ADVANCED_LOGIC",
+      "confidence": 0.9,
+      "evidence": "Intel is developing advanced logic technologies including EUV lithography and GAA transistors"
+    }
+  ],
+  "ai_capabilities": [
+    {
+      "type": "ADVANCED_LOGIC",
+      "confidence": 0.9,
+      "evidence": "The project description mentions an advanced semiconductor manufacturing facility, which implies the use of cutting-edge process technologies. [AI Enhanced: Intel is a leader in advanced logic technol..."
+    },
+    {
+      "type": "MATERIALS_EQUIPMENT",
+      "confidence": 0.8,
+      "evidence": "The establishment of a manufacturing facility suggests significant investment in semiconductor materials and fabrication equipment. [AI Enhanced: Intel's investment in materials and equipment is essen..."
+    }
+  ],
+  "comparison": {
+    "existing_count": 1,
+    "ai_count": 2,
+    "improvements": 1,
+    "new_capabilities": 1,
+    "improved_confidence": 0,
+    "details": []
+  }
+}

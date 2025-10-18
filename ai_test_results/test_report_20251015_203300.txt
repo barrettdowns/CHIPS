@@ -1,0 +1,30 @@
+
+AI Capability Classifier Test Report
+====================================
+
+Test Summary:
+- Total entities tested: 2
+- Successful tests: 2
+- Failed tests: 0
+- Total improvements: 4
+- New capabilities found: 4
+
+Detailed Results:
+
+Entity: Intel Corporation (ID: 1)
+--------------------------------------------------------
+Existing capabilities: 1
+AI capabilities: 2
+Improvements: 1
+New capabilities: 1
+Improved confidence: 0
+
+
+Entity: Industrial Advisory Co (ID: 2)
+--------------------------------------------------------
+Existing capabilities: 0
+AI capabilities: 3
+Improvements: 3
+New capabilities: 3
+Improved confidence: 0
+

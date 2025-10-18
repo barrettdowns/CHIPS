@@ -1,0 +1,353 @@
+# Capability Area Definitions
+# Maps semiconductor capabilities to keywords, patterns, and confidence scoring
+
+capabilities:
+  1:  # 3D Packaging
+    name: "3D Packaging"
+    description: "3D packaging, chiplets, HBM, advanced interconnects"
+    keywords:
+      primary:
+        - "3D packaging"
+        - "chiplet"
+        - "HBM"
+        - "high bandwidth memory"
+        - "advanced packaging"
+        - "heterogeneous integration"
+        - "system in package"
+        - "SIP"
+        - "fan-out"
+        - "fan-in"
+        - "through-silicon via"
+        - "TSV"
+        - "interposer"
+        - "bump"
+        - "flip-chip"
+      secondary:
+        - "packaging"
+        - "assembly"
+        - "interconnect"
+        - "bonding"
+        - "substrate"
+        - "thermal management"
+        - "power delivery"
+    patterns:
+      - "3D.*packag"
+      - "chiplet.*integrat"
+      - "HBM.*memor"
+      - "TSV.*via"
+      - "fan.out.*packag"
+      - "system.*package"
+    confidence_weights:
+      primary_keyword: 0.9
+      secondary_keyword: 0.6
+      pattern_match: 0.8
+      funding_context: 0.7
+      patent_context: 0.8
+
+  2:  # Heterogeneous Packaging
+    name: "Heterogeneous Packaging"
+    description: "Mixed-technology integration, system-in-package, heterogeneous integration"
+    keywords:
+      primary:
+        - "heterogeneous packaging"
+        - "heterogeneous integration"
+        - "mixed-technology"
+        - "system-in-package"
+        - "SIP"
+        - "multi-chip module"
+        - "MCM"
+        - "hybrid integration"
+        - "technology integration"
+        - "mixed-signal integration"
+      secondary:
+        - "packaging"
+        - "integration"
+        - "assembly"
+        - "interconnect"
+        - "bonding"
+        - "substrate"
+        - "thermal management"
+        - "power delivery"
+    patterns:
+      - "heterogeneous.*packag"
+      - "mixed.*technolog"
+      - "system.*package"
+      - "multi.*chip.*module"
+      - "hybrid.*integrat"
+    confidence_weights:
+      primary_keyword: 0.9
+      secondary_keyword: 0.6
+      pattern_match: 0.8
+      funding_context: 0.7
+      patent_context: 0.8
+
+  3:  # Multi Project Wafer
+    name: "Multi Project Wafer"
+    description: "MPW services, shared wafer runs, prototyping, low-volume production"
+    keywords:
+      primary:
+        - "multi project wafer"
+        - "MPW"
+        - "shared wafer"
+        - "prototyping"
+        - "low-volume production"
+        - "wafer sharing"
+        - "multi-project"
+        - "prototype wafer"
+        - "test wafer"
+        - "engineering wafer"
+      secondary:
+        - "wafer"
+        - "prototype"
+        - "testing"
+        - "development"
+        - "engineering"
+        - "low volume"
+        - "small batch"
+    patterns:
+      - "multi.*project.*wafer"
+      - "MPW.*service"
+      - "shared.*wafer"
+      - "prototype.*wafer"
+      - "engineering.*wafer"
+    confidence_weights:
+      primary_keyword: 0.9
+      secondary_keyword: 0.6
+      pattern_match: 0.8
+      funding_context: 0.7
+      patent_context: 0.8
+
+  4:  # RFIC Design
+    name: "Radio Frequency Integrated Circuit (RFIC) Design"
+    description: "RF, wireless, 5G/6G, millimeter wave, analog RF"
+    keywords:
+      primary:
+        - "RFIC"
+        - "RF integrated circuit"
+        - "millimeter wave"
+        - "mmWave"
+        - "5G"
+        - "6G"
+        - "wireless"
+        - "RF front-end"
+        - "power amplifier"
+        - "PA"
+        - "low noise amplifier"
+        - "LNA"
+        - "mixer"
+        - "oscillator"
+        - "PLL"
+        - "phase locked loop"
+      secondary:
+        - "RF"
+        - "radio frequency"
+        - "analog"
+        - "microwave"
+        - "antenna"
+        - "transceiver"
+        - "modem"
+        - "baseband"
+    patterns:
+      - "RF.*integrat"
+      - "millimeter.*wave"
+      - "5G.*RF"
+      - "6G.*RF"
+      - "power.*amplifier"
+      - "low.*noise.*amplifier"
+      - "phase.*locked.*loop"
+    confidence_weights:
+      primary_keyword: 0.9
+      secondary_keyword: 0.6
+      pattern_match: 0.8
+      funding_context: 0.7
+      patent_context: 0.8
+
+  5:  # MMIC Chips
+    name: "Monolithic Microwave Integrated Circuit (MMIC) Chips"
+    description: "Microwave integrated circuits, high-frequency RF, MMIC design"
+    keywords:
+      primary:
+        - "MMIC"
+        - "monolithic microwave integrated circuit"
+        - "microwave integrated circuit"
+        - "high-frequency RF"
+        - "microwave design"
+        - "RF microwave"
+        - "microwave amplifier"
+        - "microwave mixer"
+        - "microwave oscillator"
+        - "microwave filter"
+        - "GaAs MMIC"
+        - "GaN MMIC"
+        - "microwave IC"
+      secondary:
+        - "microwave"
+        - "high frequency"
+        - "RF"
+        - "amplifier"
+        - "mixer"
+        - "oscillator"
+        - "filter"
+        - "GaAs"
+        - "GaN"
+        - "compound semiconductor"
+    patterns:
+      - "MMIC.*design"
+      - "microwave.*integrat"
+      - "high.*frequenc.*RF"
+      - "GaAs.*MMIC"
+      - "GaN.*MMIC"
+      - "microwave.*amplifier"
+      - "microwave.*mixer"
+    confidence_weights:
+      primary_keyword: 0.9
+      secondary_keyword: 0.6
+      pattern_match: 0.8
+      funding_context: 0.7
+      patent_context: 0.8
+
+  6:  # RAD-HARD Chips
+    name: "Radiation Hardened (RAD-HARD) Chips"
+    description: "Radiation-hardened electronics, space-grade, aerospace, nuclear applications"
+    keywords:
+      primary:
+        - "radiation hardened"
+        - "RAD-HARD"
+        - "RADHARD"
+        - "space-grade"
+        - "aerospace electronics"
+        - "radiation tolerance"
+        - "radiation resistance"
+        - "space electronics"
+        - "satellite electronics"
+        - "nuclear electronics"
+        - "radiation effects"
+        - "single event upset"
+        - "SEU"
+        - "total ionizing dose"
+        - "TID"
+      secondary:
+        - "radiation"
+        - "hardened"
+        - "space"
+        - "aerospace"
+        - "satellite"
+        - "nuclear"
+        - "tolerance"
+        - "resistance"
+        - "effects"
+    patterns:
+      - "radiation.*hardened"
+      - "RAD.HARD"
+      - "space.*grade"
+      - "aerospace.*electron"
+      - "radiation.*tolerance"
+      - "satellite.*electron"
+      - "single.*event.*upset"
+      - "total.*ionizing.*dose"
+    confidence_weights:
+      primary_keyword: 0.9
+      secondary_keyword: 0.6
+      pattern_match: 0.8
+      funding_context: 0.7
+      patent_context: 0.8
+
+
+# Confidence scoring parameters
+confidence_scoring:
+  # Base confidence for different evidence types
+  evidence_types:
+    direct_funding: 0.95
+    press_release: 0.85
+    news_article: 0.75
+    patent_filing: 0.80
+    sec_filing: 0.90
+    company_website: 0.70
+    industry_report: 0.65
+  
+  # Multipliers for evidence strength
+  multipliers:
+    multiple_sources: 1.2
+    recent_evidence: 1.1
+    specific_technical_details: 1.3
+    funding_amount_large: 1.2
+    patent_granted: 1.1
+    industry_recognition: 1.15
+  
+  # Thresholds
+  thresholds:
+    high_confidence: 0.8
+    medium_confidence: 0.6
+    low_confidence: 0.4
+    review_threshold: 0.7  # Items below this go to review queue
+
+# Entity resolution parameters
+entity_resolution:
+  # Fuzzy matching thresholds
+  fuzzy_thresholds:
+    exact_match: 1.0
+    high_confidence: 0.9
+    medium_confidence: 0.8
+    low_confidence: 0.7
+  
+  # Name normalization rules
+  normalization:
+    remove_corporate_suffixes: true
+    corporate_suffixes:
+      - "Inc."
+      - "Inc"
+      - "Corporation"
+      - "Corp."
+      - "Corp"
+      - "LLC"
+      - "Ltd."
+      - "Ltd"
+      - "Limited"
+      - "Company"
+      - "Co."
+      - "Co"
+    
+    remove_common_words: true
+    common_words:
+      - "The"
+      - "A"
+      - "An"
+      - "And"
+      - "Or"
+      - "Of"
+      - "In"
+      - "On"
+      - "At"
+      - "To"
+      - "For"
+      - "With"
+      - "By"
+    
+    normalize_case: true
+    remove_punctuation: true
+  
+  # Relationship detection
+  relationships:
+    parent_subsidiary_keywords:
+      - "subsidiary"
+      - "parent company"
+      - "wholly owned"
+      - "majority owned"
+      - "acquired"
+      - "merger"
+    
+    consortium_keywords:
+      - "consortium"
+      - "partnership"
+      - "collaboration"
+      - "joint venture"
+      - "alliance"
+      - "cooperation"
+    
+    partner_keywords:
+      - "partner"
+      - "collaboration"
+      - "agreement"
+      - "contract"
+      - "supply"
+      - "customer"

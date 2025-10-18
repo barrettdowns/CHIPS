@@ -467,7 +467,55 @@ def main():
             
             selected_format, mime_type = format_map[report_format]
             
-            for report in entity_reports[:10]:  # Show first 10
+            # Search/filter functionality
+            search_term = st.text_input(
+                "🔍 Search reports by entity name:",
+                placeholder="Enter entity name to filter reports...",
+                key="report_search"
+            )
+            
+            # Filter reports based on search
+            if search_term:
+                filtered_reports = [
+                    report for report in entity_reports 
+                    if search_term.lower() in report.stem.lower()
+                ]
+                st.write(f"**Found {len(filtered_reports)} reports matching '{search_term}'**")
+            else:
+                filtered_reports = entity_reports
+            
+            # Pagination controls
+            reports_per_page = st.selectbox(
+                "Reports per page",
+                [10, 25, 50, 100, "All"],
+                index=0,
+                key="reports_per_page"
+            )
+            
+            # Apply pagination to filtered results
+            if reports_per_page == "All":
+                reports_to_show = filtered_reports
+                total_pages = 1
+            else:
+                reports_per_page = int(reports_per_page)
+                total_pages = (len(filtered_reports) + reports_per_page - 1) // reports_per_page
+                
+                # Page selection
+                if total_pages > 1:
+                    page = st.selectbox(
+                        f"Page (1 of {total_pages})",
+                        range(1, total_pages + 1),
+                        key="reports_page"
+                    )
+                    start_idx = (page - 1) * reports_per_page
+                    end_idx = start_idx + reports_per_page
+                    reports_to_show = filtered_reports[start_idx:end_idx]
+                else:
+                    reports_to_show = filtered_reports
+            
+            st.write(f"**Showing {len(reports_to_show)} of {len(filtered_reports)} reports**")
+            
+            for report in reports_to_show:
                 try:
                     if selected_format == "md":
                         # Original markdown file

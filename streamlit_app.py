@@ -142,31 +142,33 @@ def main():
     /* Professional Metrics Cards */
     .metric-card {
         background: var(--light-gray);
-        padding: 20px;
+        padding: 15px;
         border-radius: 10px;
         border-left: 5px solid var(--primary-color);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         margin-bottom: 15px;
+        text-align: center;
     }
     
     .metric-card h3 {
         color: var(--primary-color);
-        margin: 0 0 10px 0;
-        font-size: 1rem;
+        margin: 0 0 8px 0;
+        font-size: 0.9rem;
         font-weight: 600;
     }
     
     .metric-card h1 {
         color: var(--success-color);
         margin: 0 0 5px 0;
-        font-size: 2.5rem;
+        font-size: 1.8rem;
         font-weight: 700;
+        line-height: 1.1;
     }
     
     .metric-card p {
         color: #666;
         margin: 0;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     /* Professional Button Styling */
@@ -378,7 +380,7 @@ def main():
             st.markdown(f"""
             <div class="metric-card">
                 <h3>Total Funding</h3>
-                <h1 style="font-size: 2.2rem;">${total_funding/1000:,.1f}B</h1>
+                <h1>${total_funding/1000:,.1f}B</h1>
             </div>
             """, unsafe_allow_html=True)
         

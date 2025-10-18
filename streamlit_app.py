@@ -408,7 +408,7 @@ def main():
                 SUM(CASE WHEN funding_status = 'completed' THEN amount ELSE 0 END) as completed
             FROM funding
             """
-            funding_status_result = db_ops.db_manager.execute_query(funding_status_query)
+            funding_status_result = st.session_state.db_ops.db_manager.execute_query(funding_status_query)
             if funding_status_result:
                 announced_total = funding_status_result[0]['announced'] or 0
                 awarded_total = funding_status_result[0]['awarded'] or 0

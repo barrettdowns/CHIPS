@@ -5,7 +5,7 @@ Database models and schema for CHIPS Act entity tracking system.
 import sqlite3
 from datetime import datetime
 from typing import Optional, Dict, Any, List
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from enum import Enum
 
 
@@ -63,8 +63,8 @@ class ReviewItem:
     item_type: str = ""
     item_data: Optional[Dict[str, Any]] = None
     confidence_score: Optional[float] = None
-    status: ReviewStatus = ReviewStatus.PENDING
-    priority: ReviewPriority = ReviewPriority.MEDIUM
+    status: ReviewStatus = field(default=ReviewStatus.PENDING)
+    priority: ReviewPriority = field(default=ReviewPriority.MEDIUM)
     review_notes: Optional[str] = None
     created_at: Optional[datetime] = None
     reviewed_at: Optional[datetime] = None
@@ -81,8 +81,8 @@ class ReviewQueue:
     item_type: str = ""
     item_data: Optional[Dict[str, Any]] = None
     confidence_score: Optional[float] = None
-    status: ReviewStatus = ReviewStatus.PENDING
-    priority: ReviewPriority = ReviewPriority.MEDIUM
+    status: ReviewStatus = field(default=ReviewStatus.PENDING)
+    priority: ReviewPriority = field(default=ReviewPriority.MEDIUM)
     review_notes: Optional[str] = None
     created_at: Optional[datetime] = None
     reviewed_at: Optional[datetime] = None
@@ -97,7 +97,7 @@ class Entity:
     id: Optional[int] = None
     name: str = ""
     legal_name: str = ""
-    entity_type: EntityType = EntityType.COMPANY
+    entity_type: EntityType = field(default=EntityType.COMPANY)
     confidence_score: float = 0.0
     # Enhanced fields for professional template
     headquarters: Optional[str] = None
@@ -149,8 +149,8 @@ class Funding:
     # Enhanced fields for comprehensive funding tracking
     program_name: Optional[str] = None        # CHIPS Act program name
     grant_id: Optional[str] = None           # Official grant/award ID
-    funding_status: FundingStatus = FundingStatus.UNKNOWN  # Current status
-    funding_category: FundingCategory = FundingCategory.OTHER  # Project category
+    funding_status: FundingStatus = field(default=FundingStatus.UNKNOWN)  # Current status
+    funding_category: FundingCategory = field(default=FundingCategory.OTHER)  # Project category
     funding_phase: Optional[str] = None       # Phase of funding (e.g., "Phase 1", "Initial")
     disbursement_date: Optional[datetime] = None  # When funds were actually disbursed
     completion_date: Optional[datetime] = None     # Project completion date
@@ -167,7 +167,7 @@ class Capability:
     """Capability data model."""
     id: Optional[int] = None
     entity_id: int = 0
-    capability_type: CapabilityType = CapabilityType.THREE_D_PACKAGING
+    capability_type: CapabilityType = field(default=CapabilityType.THREE_D_PACKAGING)
     confidence_score: float = 0.0
     evidence: str = ""
     technical_details: str = ""
@@ -181,7 +181,7 @@ class Relationship:
     id: Optional[int] = None
     entity_a_id: int = 0
     entity_b_id: int = 0
-    relationship_type: RelationshipType = RelationshipType.OTHER
+    relationship_type: RelationshipType = field(default=RelationshipType.OTHER)
     confidence_score: float = 0.0
     evidence: str = ""
     created_at: Optional[datetime] = None

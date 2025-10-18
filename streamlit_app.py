@@ -148,6 +148,10 @@ def main():
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         margin-bottom: 15px;
         text-align: center;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     
     .metric-card h3 {

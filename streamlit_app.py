@@ -258,7 +258,7 @@ def main():
     st.markdown("""
     <div class="main-header">
         <h1>🔬 CHIPS Act Intelligence System</h1>
-        <p>Official Government OSINT Platform | KCNSC Approved</p>
+        <p>Official Government OSINT Platform</p>
     </div>
     """, unsafe_allow_html=True)
     st.markdown("**Control Center for Entity Discovery, Analysis & Report Generation**")
@@ -371,7 +371,6 @@ def main():
             <div class="metric-card">
                 <h3>Entities Tracked</h3>
                 <h1>{total_entities if stats else 0}</h1>
-                <p>43 over 100-entity goal</p>
             </div>
             """, unsafe_allow_html=True)
         
@@ -380,7 +379,6 @@ def main():
             <div class="metric-card">
                 <h3>Total Funding</h3>
                 <h1>${total_funding:,.0f}M</h1>
-                <p>Accurately tracked</p>
             </div>
             """, unsafe_allow_html=True)
         
@@ -390,7 +388,6 @@ def main():
             <div class="metric-card">
                 <h3>Entity Types</h3>
                 <h1>{len(entity_types)}</h1>
-                <p>Diverse ecosystem</p>
             </div>
             """, unsafe_allow_html=True)
         
@@ -400,7 +397,6 @@ def main():
             <div class="metric-card">
                 <h3>Capabilities</h3>
                 <h1>{len(capabilities)}</h1>
-                <p>AI-powered classification</p>
             </div>
             """, unsafe_allow_html=True)
         

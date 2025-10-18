@@ -168,8 +168,12 @@ def main():
         margin: 0;
         font-size: 1.8rem;
         font-weight: 700;
-        line-height: 1.1;
+        line-height: 1.0;
         flex-shrink: 0;
+        height: 2.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .metric-card p {

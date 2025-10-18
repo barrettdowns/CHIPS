@@ -63,8 +63,8 @@ class ReviewItem:
     item_type: str = field(default_factory=lambda: "")
     item_data: Optional[Dict[str, Any]] = None
     confidence_score: Optional[float] = None
-    status: ReviewStatus = field(default=ReviewStatus.PENDING)
-    priority: ReviewPriority = field(default=ReviewPriority.MEDIUM)
+    status: ReviewStatus = field(default_factory=lambda: ReviewStatus.PENDING)
+    priority: ReviewPriority = field(default_factory=lambda: ReviewPriority.MEDIUM)
     review_notes: Optional[str] = None
     created_at: Optional[datetime] = None
     reviewed_at: Optional[datetime] = None
@@ -81,8 +81,8 @@ class ReviewQueue:
     item_type: str = field(default_factory=lambda: "")
     item_data: Optional[Dict[str, Any]] = None
     confidence_score: Optional[float] = None
-    status: ReviewStatus = field(default=ReviewStatus.PENDING)
-    priority: ReviewPriority = field(default=ReviewPriority.MEDIUM)
+    status: ReviewStatus = field(default_factory=lambda: ReviewStatus.PENDING)
+    priority: ReviewPriority = field(default_factory=lambda: ReviewPriority.MEDIUM)
     review_notes: Optional[str] = None
     created_at: Optional[datetime] = None
     reviewed_at: Optional[datetime] = None
@@ -97,7 +97,7 @@ class Entity:
     id: Optional[int] = None
     name: str = field(default_factory=lambda: "")
     legal_name: str = field(default_factory=lambda: "")
-    entity_type: EntityType = field(default=EntityType.COMPANY)
+    entity_type: EntityType = field(default_factory=lambda: EntityType.COMPANY)
     confidence_score: float = field(default_factory=lambda: 0.0)
     # Enhanced fields for professional template
     headquarters: Optional[str] = None
@@ -149,8 +149,8 @@ class Funding:
     # Enhanced fields for comprehensive funding tracking
     program_name: Optional[str] = None        # CHIPS Act program name
     grant_id: Optional[str] = None           # Official grant/award ID
-    funding_status: FundingStatus = field(default=FundingStatus.UNKNOWN)  # Current status
-    funding_category: FundingCategory = field(default=FundingCategory.OTHER)  # Project category
+    funding_status: FundingStatus = field(default_factory=lambda: FundingStatus.UNKNOWN)  # Current status
+    funding_category: FundingCategory = field(default_factory=lambda: FundingCategory.OTHER)  # Project category
     funding_phase: Optional[str] = None       # Phase of funding (e.g., "Phase 1", "Initial")
     disbursement_date: Optional[datetime] = None  # When funds were actually disbursed
     completion_date: Optional[datetime] = None     # Project completion date
@@ -167,7 +167,7 @@ class Capability:
     """Capability data model."""
     id: Optional[int] = None
     entity_id: int = field(default_factory=lambda: 0)
-    capability_type: CapabilityType = field(default=CapabilityType.THREE_D_PACKAGING)
+    capability_type: CapabilityType = field(default_factory=lambda: CapabilityType.THREE_D_PACKAGING)
     confidence_score: float = field(default_factory=lambda: 0.0)
     evidence: str = field(default_factory=lambda: "")
     technical_details: str = field(default_factory=lambda: "")
@@ -181,7 +181,7 @@ class Relationship:
     id: Optional[int] = None
     entity_a_id: int = field(default_factory=lambda: 0)
     entity_b_id: int = field(default_factory=lambda: 0)
-    relationship_type: RelationshipType = field(default=RelationshipType.OTHER)
+    relationship_type: RelationshipType = field(default_factory=lambda: RelationshipType.OTHER)
     confidence_score: float = field(default_factory=lambda: 0.0)
     evidence: str = field(default_factory=lambda: "")
     created_at: Optional[datetime] = None

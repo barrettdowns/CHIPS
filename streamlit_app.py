@@ -35,14 +35,22 @@ def get_entity_data():
         
         entity_data = []
         for entity in entities:
-            # Get funding data
+            # Get funding data with status breakdown
             funding_query = """
-            SELECT SUM(amount) as total_funding, COUNT(*) as funding_count
+            SELECT 
+                SUM(amount) as total_funding, 
+                COUNT(*) as funding_count,
+                SUM(CASE WHEN funding_status = 'announced' THEN amount ELSE 0 END) as announced_funding,
+                SUM(CASE WHEN funding_status = 'awarded' THEN amount ELSE 0 END) as awarded_funding,
+                SUM(CASE WHEN funding_status = 'completed' THEN amount ELSE 0 END) as completed_funding
             FROM funding WHERE entity_id = ?
             """
             funding_result = db_ops.db_manager.execute_query(funding_query, (entity.id,))
             total_funding = funding_result[0]['total_funding'] if funding_result and funding_result[0]['total_funding'] else 0
             funding_count = funding_result[0]['funding_count'] if funding_result else 0
+            announced_funding = funding_result[0]['announced_funding'] if funding_result else 0
+            awarded_funding = funding_result[0]['awarded_funding'] if funding_result else 0
+            completed_funding = funding_result[0]['completed_funding'] if funding_result else 0
             
             # Get capabilities
             capabilities_query = """
@@ -66,6 +74,9 @@ def get_entity_data():
                 'legal_name': entity.legal_name,
                 'entity_type': entity.entity_type.value,
                 'total_funding': total_funding,
+                'announced_funding': announced_funding,
+                'awarded_funding': awarded_funding,
+                'completed_funding': completed_funding,
                 'funding_count': funding_count,
                 'capabilities': ', '.join(capabilities) if capabilities else 'None',
                 'capability_count': len(capabilities),
@@ -389,10 +400,31 @@ def main():
             """, unsafe_allow_html=True)
         
         with col2:
+            # Get funding status breakdown
+            funding_status_query = """
+            SELECT 
+                SUM(CASE WHEN funding_status = 'announced' THEN amount ELSE 0 END) as announced,
+                SUM(CASE WHEN funding_status = 'awarded' THEN amount ELSE 0 END) as awarded,
+                SUM(CASE WHEN funding_status = 'completed' THEN amount ELSE 0 END) as completed
+            FROM funding
+            """
+            funding_status_result = db_ops.db_manager.execute_query(funding_status_query)
+            if funding_status_result:
+                announced_total = funding_status_result[0]['announced'] or 0
+                awarded_total = funding_status_result[0]['awarded'] or 0
+                completed_total = funding_status_result[0]['completed'] or 0
+            else:
+                announced_total = awarded_total = completed_total = 0
+            
             st.markdown(f"""
             <div class="metric-card">
                 <h3>Total Funding</h3>
                 <h1>${total_funding/1000:,.1f}B</h1>
+                <p style="font-size: 0.7rem; margin-top: 5px;">
+                    📢 Announced: ${announced_total/1000:,.1f}B<br>
+                    ✅ Awarded: ${awarded_total/1000:,.1f}B<br>
+                    🏁 Completed: ${completed_total/1000:,.1f}B
+                </p>
             </div>
             """, unsafe_allow_html=True)
         
@@ -486,14 +518,24 @@ def main():
             # Sort by funding
             filtered_df = filtered_df.sort_values('total_funding', ascending=False)
             
-            # Display table
+            # Display table with funding status breakdown
+            display_df = filtered_df[['name', 'entity_type', 'total_funding', 'announced_funding', 'awarded_funding', 'completed_funding', 'capability_count', 'capabilities']].copy()
+            
+            # Format funding columns for display
+            display_df['announced_funding'] = display_df['announced_funding'].apply(lambda x: f"${x/1000000:.1f}M" if x > 0 else "—")
+            display_df['awarded_funding'] = display_df['awarded_funding'].apply(lambda x: f"${x/1000000:.1f}M" if x > 0 else "—")
+            display_df['completed_funding'] = display_df['completed_funding'].apply(lambda x: f"${x/1000000:.1f}M" if x > 0 else "—")
+            
             st.dataframe(
-                filtered_df[['name', 'entity_type', 'total_funding', 'capability_count', 'capabilities']],
+                display_df,
                 use_container_width=True,
                 column_config={
                     'name': 'Entity Name',
                     'entity_type': 'Type',
-                    'total_funding': st.column_config.NumberColumn('Funding ($)', format='$%.0f'),
+                    'total_funding': st.column_config.NumberColumn('Total ($)', format='$%.0f'),
+                    'announced_funding': '📢 Announced',
+                    'awarded_funding': '✅ Awarded', 
+                    'completed_funding': '🏁 Completed',
                     'capability_count': 'Capabilities',
                     'capabilities': 'Capability List'
                 }

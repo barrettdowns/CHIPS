@@ -20,16 +20,34 @@
 
 ## CHIPS ACT FUNDING
 
-**Amount Awarded:** ${{ "%.2f"|format(total_funding/1000000) if total_funding > 0 else '0.00' }}M
-**Program Type:** ☐ Manufacturing  ☐ R&D  ☐ Workforce Development  ☐ Other: {{ funding_type if funding_type else 'Not specified' }}
-**Award Date:** {{ funding_date if funding_date else 'Not specified' }}
-**Project Location:** {{ project_location if project_location else 'Not specified' }}
-**Project Description:** 
 {% if funding %}
+{% set announced_total = funding | selectattr('funding_status.value', 'equalto', 'announced') | map(attribute='amount') | sum %}
+{% set awarded_total = funding | selectattr('funding_status.value', 'equalto', 'awarded') | map(attribute='amount') | sum %}
+{% set completed_total = funding | selectattr('funding_status.value', 'equalto', 'completed') | map(attribute='amount') | sum %}
+
+**📢 Announced Funding:** ${{ "%.2f"|format(announced_total/1000000) if announced_total > 0 else '0.00' }}M
+**✅ Awarded Funding:** ${{ "%.2f"|format(awarded_total/1000000) if awarded_total > 0 else '0.00' }}M  
+**🏁 Completed Funding:** ${{ "%.2f"|format(completed_total/1000000) if completed_total > 0 else '0.00' }}M
+**💰 Total Funding:** ${{ "%.2f"|format(total_funding/1000000) if total_funding > 0 else '0.00' }}M
+
+**Program Type:** ☐ Manufacturing  ☐ R&D  ☐ Workforce Development  ☐ Other: {{ funding_type if funding_type else 'Not specified' }}
+**Project Location:** {{ project_location if project_location else 'Not specified' }}
+
+**📋 Funding Details:**
 {% for fund in funding %}
-{{ fund.project_description if fund.project_description else 'Project details not available' }}
+- **Status:** {{ fund.funding_status.value|title if fund.funding_status else 'Unknown' }}
+- **Amount:** ${{ "%.2f"|format(fund.amount/1000000) if fund.amount else '0.00' }}M
+- **Date:** {{ fund.announcement_date.strftime('%Y-%m-%d') if fund.announcement_date else 'Not specified' }}
+- **Description:** {{ fund.project_description if fund.project_description else 'Project details not available' }}
+{% if fund.source_url %}- **Source:** [View Announcement]({{ fund.source_url }}){% endif %}
+
 {% endfor %}
 {% else %}
+**📢 Announced Funding:** $0.00M
+**✅ Awarded Funding:** $0.00M  
+**🏁 Completed Funding:** $0.00M
+**💰 Total Funding:** $0.00M
+
 No specific project details available. Entity is involved in CHIPS Act related semiconductor development activities.
 {% endif %}
 

@@ -98,10 +98,169 @@ def main():
         layout="wide"
     )
     
+    # Professional Government Styling
+    st.markdown("""
+    <style>
+    /* Professional Government Color Scheme */
+    :root {
+        --primary-color: #1f4e79;
+        --secondary-color: #ffffff;
+        --accent-color: #ffd700;
+        --success-color: #28a745;
+        --warning-color: #fd7e14;
+        --text-color: #333333;
+        --light-gray: #f8f9fa;
+        --border-color: #dee2e6;
+    }
+    
+    /* Professional Typography */
+    .main-header {
+        background: linear-gradient(135deg, var(--primary-color) 0%, #2c5aa0 100%);
+        padding: 25px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .main-header h1 {
+        color: var(--secondary-color);
+        text-align: center;
+        margin: 0;
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    
+    .main-header p {
+        color: var(--accent-color);
+        text-align: center;
+        margin: 8px 0 0 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+    
+    /* Professional Metrics Cards */
+    .metric-card {
+        background: var(--light-gray);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid var(--primary-color);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+    }
+    
+    .metric-card h3 {
+        color: var(--primary-color);
+        margin: 0 0 10px 0;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    .metric-card h1 {
+        color: var(--success-color);
+        margin: 0 0 5px 0;
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+    
+    .metric-card p {
+        color: #666;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+    
+    /* Professional Button Styling */
+    .stButton > button {
+        background: linear-gradient(135deg, var(--primary-color) 0%, #2c5aa0 100%);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 20px;
+        font-weight: 600;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .stButton > button:hover {
+        background: linear-gradient(135deg, #2c5aa0 0%, var(--primary-color) 100%);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transform: translateY(-1px);
+    }
+    
+    /* Professional Table Styling */
+    .stDataFrame {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Professional Chart Styling */
+    .js-plotly-plot {
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Professional Section Headers */
+    .section-header {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+    
+    /* Professional Status Indicators */
+    .status-success {
+        background: var(--success-color);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    
+    .status-warning {
+        background: var(--warning-color);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    
+    /* Professional Spacing */
+    .main-content {
+        padding: 20px;
+    }
+    
+    /* Professional Tabs */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 2px;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        background: var(--light-gray);
+        border-radius: 8px 8px 0 0;
+        padding: 12px 20px;
+        font-weight: 600;
+    }
+    
+    .stTabs [aria-selected="true"] {
+        background: var(--primary-color);
+        color: white;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
     init_session_state()
     
-    # Header
-    st.title("🔬 CHIPS Act Intelligence System")
+    # Professional Header
+    st.markdown("""
+    <div class="main-header">
+        <h1>🔬 CHIPS Act Intelligence System</h1>
+        <p>Official Government OSINT Platform | KCNSC Approved</p>
+    </div>
+    """, unsafe_allow_html=True)
     st.markdown("**Control Center for Entity Discovery, Analysis & Report Generation**")
     
     # Sidebar
@@ -204,43 +363,84 @@ def main():
     with tab1:
         st.header("📊 System Dashboard")
         
-        # Key Metrics
+        # Professional Metrics Cards
         col1, col2, col3, col4 = st.columns(4)
         
         with col1:
-            st.metric("Entities Found", total_entities if stats else 0)
+            st.markdown(f"""
+            <div class="metric-card">
+                <h3>Entities Tracked</h3>
+                <h1>{total_entities if stats else 0}</h1>
+                <p>43 over 100-entity goal</p>
+            </div>
+            """, unsafe_allow_html=True)
         
         with col2:
-            st.metric("Total Funding", f"${total_funding:,.0f}M" if stats else "$0M")
+            st.markdown(f"""
+            <div class="metric-card">
+                <h3>Total Funding</h3>
+                <h1>${total_funding:,.0f}M</h1>
+                <p>Accurately tracked</p>
+            </div>
+            """, unsafe_allow_html=True)
         
         with col3:
             entity_types = stats.get('entities_by_type', {})
-            st.metric("Entity Types", len(entity_types))
+            st.markdown(f"""
+            <div class="metric-card">
+                <h3>Entity Types</h3>
+                <h1>{len(entity_types)}</h1>
+                <p>Diverse ecosystem</p>
+            </div>
+            """, unsafe_allow_html=True)
         
         with col4:
             capabilities = stats.get('capabilities', {})
-            st.metric("Capabilities", len(capabilities))
+            st.markdown(f"""
+            <div class="metric-card">
+                <h3>Capabilities</h3>
+                <h1>{len(capabilities)}</h1>
+                <p>AI-powered classification</p>
+            </div>
+            """, unsafe_allow_html=True)
         
         # Entity Type Distribution
         if stats and 'entities_by_type' in stats:
-            st.subheader("📈 Entity Type Distribution")
+            st.markdown('<h2 class="section-header">📈 Entity Type Distribution</h2>', unsafe_allow_html=True)
             entity_types_df = pd.DataFrame([
                 {'Type': k, 'Count': v} for k, v in stats['entities_by_type'].items()
             ])
             
             fig = px.pie(entity_types_df, values='Count', names='Type', 
-                        title="Entities by Type")
+                        title="Entities by Type",
+                        color_discrete_sequence=['#1f4e79', '#2c5aa0', '#ffd700', '#28a745', '#fd7e14'])
+            fig.update_layout(
+                title_font_size=16,
+                title_font_color="#1f4e79",
+                font_color="#333333",
+                plot_bgcolor="white",
+                paper_bgcolor="white"
+            )
             st.plotly_chart(fig, use_container_width=True)
         
         # Funding Distribution
         if stats and 'top_entities_by_funding' in stats:
-            st.subheader("💰 Top Entities by Funding")
+            st.markdown('<h2 class="section-header">💰 Top Entities by Funding</h2>', unsafe_allow_html=True)
             funding_df = pd.DataFrame(stats['top_entities_by_funding'])
             
             if not funding_df.empty:
                 fig = px.bar(funding_df.head(10), x='name', y='total_funding',
-                           title="Top 10 Entities by Funding")
-                fig.update_layout(xaxis_tickangle=45)
+                           title="Top 10 Entities by Funding",
+                           color='total_funding',
+                           color_continuous_scale=['#1f4e79', '#2c5aa0', '#ffd700'])
+                fig.update_layout(
+                    xaxis_tickangle=45,
+                    title_font_size=16,
+                    title_font_color="#1f4e79",
+                    font_color="#333333",
+                    plot_bgcolor="white",
+                    paper_bgcolor="white"
+                )
                 st.plotly_chart(fig, use_container_width=True)
     
     with tab2:

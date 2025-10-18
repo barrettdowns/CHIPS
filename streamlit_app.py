@@ -166,7 +166,7 @@ def main():
     .metric-card h1 {
         color: var(--success-color);
         margin: 0;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         font-weight: 700;
         line-height: 1.0;
         flex-shrink: 0;
@@ -174,6 +174,9 @@ def main():
         display: flex;
         align-items: center;
         justify-content: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .metric-card p {

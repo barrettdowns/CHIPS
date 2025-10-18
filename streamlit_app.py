@@ -391,7 +391,7 @@ def main():
         with col2:
             st.markdown(f"""
             <div class="metric-card">
-                <h3>Total Funding</h3>
+                <h3>Total Funding Awarded</h3>
                 <h1>${total_funding/1000:,.1f}B</h1>
             </div>
             """, unsafe_allow_html=True)

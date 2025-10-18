@@ -152,6 +152,7 @@ def main():
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
     
     .metric-card h3 {
@@ -159,14 +160,16 @@ def main():
         margin: 0 0 8px 0;
         font-size: 0.9rem;
         font-weight: 600;
+        flex-shrink: 0;
     }
     
     .metric-card h1 {
         color: var(--success-color);
-        margin: 0 0 5px 0;
+        margin: 0;
         font-size: 1.8rem;
         font-weight: 700;
         line-height: 1.1;
+        flex-shrink: 0;
     }
     
     .metric-card p {

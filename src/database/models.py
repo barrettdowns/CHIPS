@@ -195,7 +195,7 @@ class DataSource:
     source_type: str = ""
     url: str = ""
     collected_at: Optional[datetime] = None
-    raw_data: Dict[str, Any] = None
+    raw_data: Optional[Dict[str, Any]] = None
     created_at: Optional[datetime] = None
 
 

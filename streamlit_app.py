@@ -301,8 +301,6 @@ def main():
             
             if total_entities < 100:
                 st.warning(f"Need {100 - total_entities} more entities to reach goal")
-            else:
-                st.success("🎉 Goal achieved!")
         
         # Quick Actions
         st.subheader("⚡ Quick Actions")

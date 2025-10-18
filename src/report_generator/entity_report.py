@@ -11,6 +11,7 @@ from loguru import logger
 
 from ..database.db import DatabaseOperations
 from ..database.models import CapabilityType, ReviewStatus
+from .format_converter import ReportFormatConverter
 # Templates are loaded dynamically by Jinja2
 
 
@@ -22,6 +23,7 @@ class ReportGenerator:
         self.templates_dir = Path(templates_dir)
         self.reports_dir = Path("reports")
         self.reports_dir.mkdir(parents=True, exist_ok=True)
+        self.format_converter = ReportFormatConverter()
         
         # Setup Jinja2 environment
         self.jinja_env = Environment(
@@ -80,6 +82,29 @@ class ReportGenerator:
         
         logger.info(f"Entity report saved to {report_path}")
         return str(report_path)
+    
+    def generate_entity_report_multiple_formats(self, entity_id: int, formats: List[str] = ['md', 'docx', 'txt']) -> Dict[str, str]:
+        """Generate entity report in multiple formats."""
+        logger.info(f"Generating entity report in formats: {formats}")
+        
+        # First generate the markdown report
+        md_path = self.generate_entity_report(entity_id)
+        if not md_path:
+            return {}
+        
+        # Convert to other formats
+        converted_paths = {'md': md_path}
+        
+        for format_type in formats:
+            if format_type != 'md':
+                try:
+                    converted_path = self.format_converter.convert_report(md_path, format_type)
+                    converted_paths[format_type] = converted_path
+                    logger.info(f"Converted to {format_type}: {converted_path}")
+                except Exception as e:
+                    logger.error(f"Failed to convert to {format_type}: {e}")
+        
+        return converted_paths
     
     def generate_capability_cluster_report(self, capability_type: CapabilityType) -> str:
         """Generate report for a capability cluster."""

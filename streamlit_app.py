@@ -448,15 +448,53 @@ def main():
         
         if entity_reports_dir.exists() and entity_reports:
             st.write("**Available Entity Reports:**")
-            for report in entity_reports[:10]:  # Show first 10
-                with open(report, 'r') as f:
-                    content = f.read()
-                st.download_button(
-                    label=f"📄 {report.name}",
-                    data=content,
-                    file_name=report.name,
-                    mime="text/markdown"
+            
+            # Format selection
+            col1, col2 = st.columns([3, 1])
+            with col2:
+                report_format = st.selectbox(
+                    "Report Format",
+                    ["Markdown (.md)", "Word (.docx)", "Text (.txt)"],
+                    key="report_format_selector"
                 )
+            
+            # Convert format selection to file extension
+            format_map = {
+                "Markdown (.md)": ("md", "text/markdown"),
+                "Word (.docx)": ("docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+                "Text (.txt)": ("txt", "text/plain")
+            }
+            
+            selected_format, mime_type = format_map[report_format]
+            
+            for report in entity_reports[:10]:  # Show first 10
+                try:
+                    if selected_format == "md":
+                        # Original markdown file
+                        with open(report, 'r') as f:
+                            content = f.read()
+                        file_name = report.name
+                    else:
+                        # Convert to other format
+                        from src.report_generator.format_converter import ReportFormatConverter
+                        converter = ReportFormatConverter()
+                        converted_path = converter.convert_report(str(report), selected_format)
+                        
+                        with open(converted_path, 'rb') as f:
+                            content = f.read()
+                        
+                        # Update file name with new extension
+                        file_name = report.stem + f".{selected_format}"
+                    
+                    st.download_button(
+                        label=f"📄 {report.stem} ({selected_format.upper()})",
+                        data=content,
+                        file_name=file_name,
+                        mime=mime_type,
+                        key=f"download_{report.stem}_{selected_format}"
+                    )
+                except Exception as e:
+                    st.error(f"Error converting {report.name} to {selected_format}: {e}")
     
     with tab4:
         st.header("⚙️ System Settings")
@@ -492,9 +530,10 @@ def main():
         
         with col2:
             st.write("**Report Format:**")
-            st.checkbox("Markdown", value=True)
+            st.checkbox("Markdown (.md)", value=True)
+            st.checkbox("Word (.docx)", value=True)
+            st.checkbox("Text (.txt)", value=True)
             st.checkbox("PDF", value=False)
-            st.checkbox("JSON", value=False)
         
         # System Info
         st.subheader("ℹ️ System Information")

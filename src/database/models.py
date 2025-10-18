@@ -199,19 +199,6 @@ class DataSource:
     created_at: Optional[datetime] = None
 
 
-@dataclass
-class ReviewItem:
-    """Review queue item model."""
-    id: Optional[int] = None
-    entity_id: int = 0
-    issue_type: str = ""
-    confidence_score: float = 0.0
-    status: ReviewStatus = ReviewStatus.PENDING
-    notes: str = ""
-    created_at: Optional[datetime] = None
-    reviewed_at: Optional[datetime] = None
-
-
 class DatabaseManager:
     """SQLite database manager."""
     

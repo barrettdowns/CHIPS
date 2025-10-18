@@ -60,7 +60,7 @@ class ReviewItem:
     """Review queue item data model."""
     id: Optional[int] = None
     entity_id: Optional[int] = None
-    item_type: str = ""
+    item_type: str = field(default="")
     item_data: Optional[Dict[str, Any]] = None
     confidence_score: Optional[float] = None
     status: ReviewStatus = field(default=ReviewStatus.PENDING)
@@ -78,7 +78,7 @@ class ReviewQueue:
     """Review queue data model."""
     id: Optional[int] = None
     entity_id: Optional[int] = None
-    item_type: str = ""
+    item_type: str = field(default="")
     item_data: Optional[Dict[str, Any]] = None
     confidence_score: Optional[float] = None
     status: ReviewStatus = field(default=ReviewStatus.PENDING)
@@ -95,10 +95,10 @@ class ReviewQueue:
 class Entity:
     """Entity data model."""
     id: Optional[int] = None
-    name: str = ""
-    legal_name: str = ""
+    name: str = field(default="")
+    legal_name: str = field(default="")
     entity_type: EntityType = field(default=EntityType.COMPANY)
-    confidence_score: float = 0.0
+    confidence_score: float = field(default=0.0)
     # Enhanced fields for professional template
     headquarters: Optional[str] = None
     website: Optional[str] = None
@@ -138,12 +138,12 @@ class FundingCategory(Enum):
 class Funding:
     """Enhanced funding data model with comprehensive CHIPS Act fields."""
     id: Optional[int] = None
-    entity_id: int = 0
+    entity_id: int = field(default=0)
     amount: Optional[float] = None
-    currency: str = "USD"
+    currency: str = field(default="USD")
     announcement_date: Optional[datetime] = None
-    project_description: str = ""
-    source_url: str = ""
+    project_description: str = field(default="")
+    source_url: str = field(default="")
     created_at: Optional[datetime] = None
     
     # Enhanced fields for comprehensive funding tracking
@@ -157,8 +157,8 @@ class Funding:
     project_location: Optional[str] = None    # Geographic location of project
     matching_funds: Optional[float] = None    # Required matching funds amount
     jobs_created: Optional[int] = None        # Expected/actual jobs created
-    confidence_score: float = 0.0             # Confidence in funding data accuracy
-    verification_status: str = "unverified"   # Data verification status
+    confidence_score: float = field(default=0.0)             # Confidence in funding data accuracy
+    verification_status: str = field(default="unverified")   # Data verification status
     notes: Optional[str] = None               # Additional notes or context
 
 
@@ -166,12 +166,12 @@ class Funding:
 class Capability:
     """Capability data model."""
     id: Optional[int] = None
-    entity_id: int = 0
+    entity_id: int = field(default=0)
     capability_type: CapabilityType = field(default=CapabilityType.THREE_D_PACKAGING)
-    confidence_score: float = 0.0
-    evidence: str = ""
-    technical_details: str = ""
-    ai_insights: str = ""
+    confidence_score: float = field(default=0.0)
+    evidence: str = field(default="")
+    technical_details: str = field(default="")
+    ai_insights: str = field(default="")
     created_at: Optional[datetime] = None
 
 
@@ -179,11 +179,11 @@ class Capability:
 class Relationship:
     """Relationship data model."""
     id: Optional[int] = None
-    entity_a_id: int = 0
-    entity_b_id: int = 0
+    entity_a_id: int = field(default=0)
+    entity_b_id: int = field(default=0)
     relationship_type: RelationshipType = field(default=RelationshipType.OTHER)
-    confidence_score: float = 0.0
-    evidence: str = ""
+    confidence_score: float = field(default=0.0)
+    evidence: str = field(default="")
     created_at: Optional[datetime] = None
 
 
@@ -191,9 +191,9 @@ class Relationship:
 class DataSource:
     """Data source tracking model."""
     id: Optional[int] = None
-    entity_id: int = 0
-    source_type: str = ""
-    url: str = ""
+    entity_id: int = field(default=0)
+    source_type: str = field(default="")
+    url: str = field(default="")
     collected_at: Optional[datetime] = None
     raw_data: Optional[Dict[str, Any]] = None
     created_at: Optional[datetime] = None
